@@ -2,10 +2,10 @@
 
 方法一：  
 配置在${collection}/conf下的solrconfig.xml，增加  
-	<requestHandler name="/ikupdate" class="org.wltea.analyzer.update.IKHandler">  
-     	<lst name="defaults">  
-     	</lst>   
-  	</requestHandler>  
+	<requestHandler name="/ikupdate" class="org.wltea.analyzer.update.IKHandler">
+     	<lst name="defaults">
+     	</lst>
+  	</requestHandler>
   
 然后利用URL进行请求  
 例如：http://localhost:8080/solr/sample_techproducts_configs/ikupdate?add=石猴  
@@ -18,10 +18,10 @@
 方法二：  
 通过词库文件添加  
 配置在${collection}/conf下的solrconfig.xml，增加  
-	<requestHandler name="/fupdate" class="org.wltea.analyzer.update.IKFHandler">  
-     	<lst name="defaults">  
-			<str name="dict"></str>  
-     	</lst>   
+	<requestHandler name="/fupdate" class="org.wltea.analyzer.update.IKFHandler">
+     	<lst name="defaults">
+			<str name="dict"></str>
+     	</lst>
   	</requestHandler>  
 词库文件放在solr的资源根目录下，即每个collection的conf目录。  
 然后利用URL进行请求  
@@ -30,9 +30,9 @@
 实现原理：利用IKFHandler拦截/fupdate请求，并获取dict参数  
   
 ====
-<fieldType name="text_ik" class="solr.TextField">  
-	<analyzer type="index" isMaxWordLength="false" class="org.wltea.analyzer.lucene.IKAnalyzer"/>  
-	<analyzer type="query" isMaxWordLength="true" class="org.wltea.analyzer.lucene.IKAnalyzer"/>  
+<fieldType name="text_ik" class="solr.TextField">
+	<analyzer type="index" isMaxWordLength="false" class="org.wltea.analyzer.lucene.IKAnalyzer"/>
+	<analyzer type="query" isMaxWordLength="true" class="org.wltea.analyzer.lucene.IKAnalyzer"/>
 </fieldType>  
 
 ====  
