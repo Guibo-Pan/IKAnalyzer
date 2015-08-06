@@ -229,7 +229,7 @@ public class IKUtil {
 		//List<IKEntry> list = ik.getIK(new File("C:/Users/Guibo/Desktop/1.txt"));
 		List<IKEntry> list = ik.getIK("http://baidu/com/cn?w=8");
 		for(IKEntry en:list){
-			System.out.println(en.text+" "+en.type);
+			System.out.println(en.getText()+" "+en.getTypeName());
 		}
 //		for(String s:list){
 //			System.out.println(s);

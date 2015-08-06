@@ -1,13 +1,13 @@
 package com.ky.util;
 
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Set;
 import java.util.HashSet;
 
+import com.sun.xml.internal.xsom.impl.scd.Iterators.Map;
+
 public class IKEntry {
-	enum WORDTPYE{
-		PHONE_NUM,QQ_NUM,EMAIL,ID_NUM,PLATE_NUM,ENG_WORD,CN_WORD,OTHER
-	};
 	//其他
 	public static final int TYPE_OTHER = 0;
 	//英文
@@ -39,20 +39,41 @@ public class IKEntry {
 	//车牌号码
 	public static final int TYPE_PLATE_NUM = 10;
 	
+	public static HashMap<Integer, String> typeName = null;
+	
 	public static final Set<String> PROV = new HashSet<String>(Arrays.asList("京", "津", "冀", "晋", "蒙", "辽", "吉", "黑", 
 			"沪", "苏", "浙", "皖", "闽", "赣", "鲁", "豫", "鄂", "湘", "粤", "桂", "琼", "渝", "川", "贵", "云", 
 			"藏", "陕", "秦", "甘", "青", "宁", "新", "港", "澳", "台"));
 			
-	int type;
-	String text;
+	private int type;
+	private String text;
 	
-	public IKEntry(){}
+	public IKEntry(){ 
+		init();
+	}
 	
 	public IKEntry(int type,String text){
 		this.type = type;
 		this.text = text;
+		init();
 	}
-
+	
+	private static int[] typeArr = new int[]{TYPE_OTHER,TYPE_ENGLISH,TYPE_ARABIC,TYPE_LETTER,
+			TYPE_CNWORD,TYPE_CNCHAR,TYPE_OTHER_CJK,TYPE_CNUM,TYPE_COUNT,TYPE_CQUAN,
+			TYPE_PHONE_NUM,TYPE_QQ_NUM,TYPE_EMAIL,TYPE_ID_NUM,TYPE_PLATE_NUM};
+	private static String[] typeNames = new String[]{"OTHER","ENGLISH","ARABIC","LETTER",
+		"CNWORD","CNCHAR","OTHER_CJK","CNUM","COUNT","CQUAN",
+		"PHONE_NUM","QQ_NUM","EMAIL","ID_NUM","PLATE_NUM"};
+	
+	private static void init() {
+		if(typeName == null) {
+			typeName = new HashMap<Integer, String>();
+			for(int i = 0; i < typeArr.length; i++) {
+				typeName.put(typeArr[i], typeNames[i]);
+			}
+		}
+	}
+	
 	public int getType() {
 		return type;
 	}
@@ -71,5 +92,9 @@ public class IKEntry {
 	
 	public boolean isProvShort() {
 		return PROV.contains(text);
+	}
+	
+	public String getTypeName() {
+		return typeName.get(this.type);
 	}
 }

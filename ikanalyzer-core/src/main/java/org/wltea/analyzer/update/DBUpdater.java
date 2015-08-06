@@ -58,7 +58,7 @@ public class DBUpdater extends AbstractUpdater{
 	 * 从properties文件加载配置
 	 * 格式为：
 	 * driver=com.mysql.jdbc.Driver
-	 * database=jdbc:mysql://127.0.0.1/test
+	 * database=jdbc:mysql://127.0.0.1:3306/test
 	 * table=table1,table2
 	 * user=root
 	 * password=1234

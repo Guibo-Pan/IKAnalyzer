@@ -6,24 +6,17 @@
  */
 package org.wltea.analyzer.lucene;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Properties;
 
 import org.apache.lucene.analysis.Tokenizer;
 import org.apache.lucene.analysis.util.ResourceLoader;
 import org.apache.lucene.analysis.util.ResourceLoaderAware;
 import org.apache.lucene.analysis.util.TokenizerFactory;
 import org.apache.lucene.util.AttributeFactory;
-import org.wltea.analyzer.dic.Dictionary;
+
 import org.wltea.analyzer.update.AbstractUpdater;
 import org.wltea.analyzer.update.DBUpdater;
 import org.wltea.analyzer.update.FSUpdater;
