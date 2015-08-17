@@ -2,7 +2,7 @@
 
 方法一：  
 配置在${collection}/conf下的solrconfig.xml，增加  
-	<requestHandler name="/ikupdate" class="org.wltea.analyzer.update.IKHandler">
+	<requestHandler name="/ikupdate" class="com.ky.analyzer.update.IKHandler">
      	<lst name="defaults">
      	</lst>
   	</requestHandler>
@@ -18,7 +18,7 @@
 方法二：  
 通过词库文件添加  
 配置在${collection}/conf下的solrconfig.xml，增加  
-	<requestHandler name="/fupdate" class="org.wltea.analyzer.update.IKFHandler">
+	<requestHandler name="/fupdate" class="com.ky.analyzer.update.IKFHandler">
      	<lst name="defaults">
 			<str name="dict"></str>
      	</lst>
@@ -31,8 +31,8 @@
   
 ====
 <fieldType name="text_ik" class="solr.TextField">
-	<analyzer type="index" isMaxWordLength="false" class="org.wltea.analyzer.lucene.IKAnalyzer"/>
-	<analyzer type="query" isMaxWordLength="true" class="org.wltea.analyzer.lucene.IKAnalyzer"/>
+	<analyzer type="index" isMaxWordLength="false" class="com.ky.analyzer.lucene.IKAnalyzer"/>
+	<analyzer type="query" isMaxWordLength="true" class="com.ky.analyzer.lucene.IKAnalyzer"/>
 </fieldType>  
 
 ====  
@@ -46,10 +46,10 @@
 并添加  
 <fieldType name="text_ik" class="solr.TextField">
 	<analyzer type="index" isMaxWordLength="false" >
-		<tokenizer class="org.wltea.analyzer.lucene.IKTokenizerFactory" useSmart="false" conf="ik.conf" dbconf="ikdb.conf" interval="1" />
+		<tokenizer class="com.ky.analyzer.lucene.IKTokenizerFactory" useSmart="false" conf="ik.conf" dbconf="ikdb.conf" interval="1" />
 	</analyzer>
 	<analyzer type="query" isMaxWordLength="true" >
-		<tokenizer class="org.wltea.analyzer.lucene.IKTokenizerFactory" useSmart="false" conf="ik.conf" dbconf="ikdb.conf" interval="1"/>
+		<tokenizer class="com.ky.analyzer.lucene.IKTokenizerFactory" useSmart="false" conf="ik.conf" dbconf="ikdb.conf" interval="1"/>
 	</analyzer>
 </fieldType>
 

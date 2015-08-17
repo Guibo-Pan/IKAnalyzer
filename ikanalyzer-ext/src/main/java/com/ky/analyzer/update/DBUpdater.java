@@ -3,9 +3,8 @@
  * 
  * @author Guibo Pan
  */
-package org.wltea.analyzer.update;
+package com.ky.analyzer.update;
 
-import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;

@@ -1,7 +1,7 @@
 /**
  * IK的solr handler，用于更新词库
  */
-package org.wltea.analyzer.update;
+package com.ky.analyzer.update;
 
 import org.apache.solr.common.params.SolrParams;
 import org.apache.solr.common.util.NamedList;

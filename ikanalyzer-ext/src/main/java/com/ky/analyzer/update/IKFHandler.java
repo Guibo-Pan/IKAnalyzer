@@ -5,7 +5,7 @@
  * @author Guibo Pan
  * @Date 2015年8月3日
  */
-package org.wltea.analyzer.update;
+package com.ky.analyzer.update;
 
 import java.io.InputStream;
 import java.util.LinkedList;

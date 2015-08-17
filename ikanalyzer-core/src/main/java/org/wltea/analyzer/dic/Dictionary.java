@@ -399,7 +399,7 @@ public class Dictionary {
 	 * Last Modified: 2015-07-31
 	 * @param is
 	 */
-	private static void updateDict(InputStream is){
+	private void updateDict(InputStream is){
 		if(is == null){
         	return;
         }

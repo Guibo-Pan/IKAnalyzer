@@ -4,7 +4,7 @@
  * @author Guibo Pan
  * @Date 2015年8月3日
  */
-package org.wltea.analyzer.lucene;
+package com.ky.analyzer.update;
 
 import java.io.IOException;
 import java.util.LinkedList;
@@ -16,11 +16,7 @@ import org.apache.lucene.analysis.util.ResourceLoader;
 import org.apache.lucene.analysis.util.ResourceLoaderAware;
 import org.apache.lucene.analysis.util.TokenizerFactory;
 import org.apache.lucene.util.AttributeFactory;
-
-import org.wltea.analyzer.update.AbstractUpdater;
-import org.wltea.analyzer.update.DBUpdater;
-import org.wltea.analyzer.update.FSUpdater;
-import org.wltea.analyzer.update.UpdateKeeper;
+import org.wltea.analyzer.lucene.IKTokenizer;
 
 
 /**
@@ -107,7 +103,7 @@ ResourceLoaderAware, UpdateKeeper.UpdateJob{
 
 	/** 
 	 * 
-	 * @see org.wltea.analyzer.update.UpdateKeeper.UpdateJob#update()
+	 * @see com.ky.analyzer.update.UpdateKeeper.UpdateJob#update()
 	 */
 	@Override
 	public void update() throws IOException {

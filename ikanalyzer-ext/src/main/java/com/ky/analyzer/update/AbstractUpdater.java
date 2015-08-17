@@ -3,7 +3,7 @@
  * 
  * @author Guibo Pan
  */
-package org.wltea.analyzer.update;
+package com.ky.analyzer.update;
 
 import java.io.IOException;
 

@@ -1,0 +1,13 @@
+.setting/
+.project
+.classpath
+ikanalyzer-core/.settings/
+ikanalyzer-core/target/
+ikanalyzer-core/.classpath
+ikanalyzer-core/.project
+ikanalyzer-ext/.settings/
+ikanalyzer-ext/target/
+ikanalyzer-ext/.classpath
+ikanalyzer-ext/.project
+ikanalyzer-parent/.settings/
+ikanalyzer-parent/.project
