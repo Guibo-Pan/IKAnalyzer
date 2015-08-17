@@ -46,10 +46,10 @@
 并添加  
 <fieldType name="text_ik" class="solr.TextField">
 	<analyzer type="index" isMaxWordLength="false" >
-		<tokenizer class="com.ky.analyzer.lucene.IKTokenizerFactory" useSmart="false" conf="ik.conf" dbconf="ikdb.conf" interval="1" />
+		<tokenizer class="com.ky.analyzer.update.IKTokenizerFactory" useSmart="false" conf="ik.conf" dbconf="ikdb.conf" interval="1" />
 	</analyzer>
 	<analyzer type="query" isMaxWordLength="true" >
-		<tokenizer class="com.ky.analyzer.lucene.IKTokenizerFactory" useSmart="false" conf="ik.conf" dbconf="ikdb.conf" interval="1"/>
+		<tokenizer class="com.ky.analyzer.update.IKTokenizerFactory" useSmart="false" conf="ik.conf" dbconf="ikdb.conf" interval="1"/>
 	</analyzer>
 </fieldType>
 
