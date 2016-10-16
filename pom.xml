@@ -7,25 +7,11 @@
 	<packaging>pom</packaging>
 	
 	<name>ikanalyzer</name>
-	<url>http://svn.coruninfo.com:8081/</url>
 	<description>支持Lucene5和Solr5</description>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-
-	<distributionManagement>
-		<repository>
-			<id>nexus-releases</id>
-			<name>ReleasesProxy</name>
-			<url>http://svn.coruninfo.com:8081/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>nexus-snapshots</id>
-			<name>SnapshotsProxy</name>
-			<url>http://svn.coruninfo.com:8081/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
 	<modules>
 		<module>ikanalyzer-parent</module>
 		<module>ikanalyzer-core</module>
